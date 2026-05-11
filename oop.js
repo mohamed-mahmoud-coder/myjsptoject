@@ -89,3 +89,85 @@ const rectA = new Rectangle(2, 5);
 const rectB = new Rectangle(3, 4);
 
 console.log(rectA.width + rectB.area);
+//Rectangle  --> circle 
+class circle extends Rectangle{};
+
+/*
+Animal the main
+   ↑
+Mammal
+   ↑
+Elephant
+*/
+class Animal {
+  eat() {
+    console.log("Eating...");
+  }
+}
+
+class Mammal extends Animal {
+  walk() {
+    console.log("Walking...");
+  }
+}
+
+class Elephant extends Mammal {
+  trunk() {
+    console.log("Using trunk...");
+  }
+}
+
+const elephant1 = new Elephant();
+
+elephant1.eat();
+elephant1.walk();
+elephant1.trunk();
+//Abstraction is all about writing code
+// in a way that will make it more generalized.
+
+console.log("adf".concat("fsd"))
+
+
+class Bird {
+    useWings() {
+        console.log("Flying!");
+    }
+}
+class Eagle extends Bird {
+    useWings() {
+        super.useWings();
+        console.log("Barely flapping!");
+    }
+}
+class Penguin extends Bird {
+    useWings() {
+        console.log("Diving!");
+    }
+}
+var baldEagle = new Eagle();
+var kingPenguin = new Penguin();
+baldEagle.useWings(); // "Flying! Barely flapping!"
+kingPenguin.useWings(); // "Diving!"
+
+
+
+/*| المبدأ        | المعنى                   |
+| ------------- | ------------------------ |
+| Inheritance   | الوراثة                  |
+| Encapsulation | إخفاء التفاصيل           |
+| Abstraction   | تبسيط الاستخدام          |
+| Polymorphism  | نفس الدالة بس سلوك مختلف |
+*/
+
+//prototype
+const animal = {
+  hasFur: true,
+  canRun: true
+};
+
+const cat1 = Object.create(animal);
+const cat2 = Object.create(animal);
+
+cat1.canRun = false;
+
+console.log(cat1.canRun + " " + cat2.canRun + " " + animal.canRun);
