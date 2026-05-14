@@ -163,11 +163,45 @@ kingPenguin.useWings(); // "Diving!"
 const animal = {
   hasFur: true,
   canRun: true
-};
+};                                            
 
 const cat1 = Object.create(animal);
 const cat2 = Object.create(animal);
 
 cat1.canRun = false;
 
-console.log(cat1.canRun + " " + cat2.canRun + " " + animal.canRun);
+console.log(cat1.canRun +` The  ${cat1.canRun}  `+ cat2.canRun + " " + animal.canRun);
+const today = new Date();
+console.log(today)
+console.log(today.getFullYear())
+
+// 
+new String('plum') === new String('plum')
+/*false
+You're getting the false when 
+comparing objects because it is not 
+the values that you pass to the constructor
+that are being compared, but rather the
+memory location where objects are saved.
+*/
+/*
+| الكود          | الاسم              |
+| -------------- | ------------------ |
+| `new Object()` | Object Constructor |
+| `{}`           | Object Literal     |
+*/
+
+
+// old wayyyyy
+var bird = {
+  hasWings: true,
+  canFly: true,
+  hasFeathers: true
+}
+
+var eagle1 = Object.create(bird);
+
+console.log("eagle1:", eagle1);
+console.log("eagle1 has wings:", eagle1.hasWings);
+console.log("eagle1 can fly:", eagle1.canFly);
+console.log("eagle1 has feathers:", eagle1.hasFeathers);
