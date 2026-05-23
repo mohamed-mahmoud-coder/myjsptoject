@@ -117,15 +117,17 @@ testBracketsDynamicAccess()
 | `for...in`                    | object + prototype |
 | `for...of` مع `Object.keys()` | object فقط         |
 */
-const car = {
+const car4 = {
     engine: true,
     steering: true,
     speed: "slow"
 };
 
-const sportsCar = Object.create(car);
+const sportsCar = Object.create(car4);
 
 sportsCar.speed = "fast";
+sportsCar.engine = false
+
 
 console.log("The sportsCar object:", sportsCar);
 
@@ -141,6 +143,31 @@ console.log("----- for...of loop -----");
 
 for (let prop of Object.keys(sportsCar)) {
     console.log(prop + ": " + sportsCar[prop]);
+  //  break;
 }
 
 console.log("Iterating over object's OWN PROPERTIES only!");
+const baseGadget = {
+  brand: "TechCo",
+  status: "old",
+  warranty: "expired"
+};
+
+const smartGadget = Object.create(baseGadget);
+
+smartGadget.status = "new";
+smartGadget.color = "black";
+
+let result = "";
+
+for (let key in smartGadget) {
+  result += key + " ";
+}
+
+result += "| ";
+
+for (let key of Object.keys(smartGadget)) {
+  result += key + " ";
+}
+
+console.log(result);
