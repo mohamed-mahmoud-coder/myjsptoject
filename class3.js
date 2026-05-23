@@ -52,7 +52,95 @@ function manager() {
 
     
     return manager;
-    // WRITE YOUR CODE HERE - Instantiate the Worker class with the manager properties
-    // WRITE YOUR CODE HERE - Call the doSomethingFun() method
-    // WRITE YOUR CODE HERE - Return the manager object
+  
+    
 }
+let cars=["red","yellow","blue"
+]
+for(let car of cars){
+    console.log(car)
+}
+const text ="road";
+for(let ros of text){
+    console.log(ros)
+}
+//Object.keys(), Object.values(), and Object.entries().
+//for Object toooo array
+
+const car2={
+    color:"blue"
+    ,topSpeed: 330
+}
+for(let car3 of Object.values(car2)){
+
+    console.log(car3);
+}
+
+const car = {
+   speed: 100,
+   color: "blue"
+}
+
+for(let key in car){
+   console.log(key)
+}
+
+var clothingItem = {
+    price: 50,
+    color: 'beige',
+    material: 'cotton',
+    season: 'autumn'
+}
+
+for( const key of Object.keys(clothingItem) ) {
+    console.log(key, ":", clothingItem[key])
+}
+function testBracketsDynamicAccess() {
+  var dynamicKey;
+  if(Math.random() > 0.5) {
+    dynamicKey = "speed";
+   }else{
+     dynamicKey = "color";
+   }
+
+    var drone = {
+      speed: 15,
+      color: "orange"
+    }
+
+    console.log(drone[dynamicKey]);
+}
+testBracketsDynamicAccess()
+
+/*| loop                          | ماذا يلف؟          |
+| ----------------------------- | ------------------ |
+| `for...in`                    | object + prototype |
+| `for...of` مع `Object.keys()` | object فقط         |
+*/
+const car = {
+    engine: true,
+    steering: true,
+    speed: "slow"
+};
+
+const sportsCar = Object.create(car);
+
+sportsCar.speed = "fast";
+
+console.log("The sportsCar object:", sportsCar);
+
+console.log("----- for...in loop -----");
+
+for (let prop in sportsCar) {
+    console.log(prop);
+}
+
+console.log("Iterating over object AND its prototype!");
+
+console.log("----- for...of loop -----");
+
+for (let prop of Object.keys(sportsCar)) {
+    console.log(prop + ": " + sportsCar[prop]);
+}
+
+console.log("Iterating over object's OWN PROPERTIES only!");
