@@ -171,3 +171,9 @@ for (let key of Object.keys(smartGadget)) {
 }
 
 console.log(result);
+
+//Template Literal
+let name = "Mohamed";
+
+console.log(`Hel
+    lo ${name}`);
