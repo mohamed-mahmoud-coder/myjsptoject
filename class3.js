@@ -177,3 +177,25 @@ let name = "Mohamed";
 
 console.log(`Hel
     lo ${name}`);
+
+  
+//Because sets only keep unique items and ignore duplicate additions, 
+// the set contains 5 and 7 so ids.size is 2.
+
+const ids = new Set();
+
+ids.add(5);
+ids.add(7);
+ids.add(5);
+
+console.log(ids.size);
+
+//أي شيء يمكن يكون key.
+
+const myMap = new Map();
+
+myMap.set("name", "Mohamed");
+myMap.set(1, "number");
+myMap.set(true, "boolean");
+
+myMap.get("name")
