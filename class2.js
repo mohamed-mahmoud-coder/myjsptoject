@@ -155,3 +155,10 @@ leo.makeSound(true); // purr, meow
 var cuddles = new Tiger();
 cuddles.makeSound(false); // Roar!
 cuddles.makeSound(true); // purr, Roar!
+
+
+
+    var result = {
+      value: 7
+    };
+    console.log(JSON.stringify(result));
